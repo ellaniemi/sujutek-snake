@@ -41,7 +41,7 @@
   <script>
     const canvas = document.getElementById("game");
     const ctx = canvas.getContext("2d");
-    const grid = 25;
+    const grid = 40;
     let snake = [];
     let direction = { x: grid, y: 0 };
     let food = { x: 75, y: 75 };
@@ -109,7 +109,7 @@
       if (!gameOver && gameStarted) {
         move();
         draw();
-        setTimeout(loop, 160); // hitaampi mato
+        setTimeout(loop, 220); // hitaampi mato
       }
     }
 
