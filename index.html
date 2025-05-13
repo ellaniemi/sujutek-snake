@@ -34,6 +34,7 @@
 </head>
 <body>
   <div id="startScreen">
+    <h2 style="text-align:center; color:#2177f9;">Valmiina SujutekSnake -peliin?</h2>
     <button id="startButton" onclick="startGame()">Aloita peli</button>
   </div>
   <canvas id="game" width="400" height="400"></canvas>
@@ -126,7 +127,7 @@
       loop();
     }
 
-    document.addEventListener("keydown", (e) => {
+    document.body.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft" && direction.x === 0) direction = { x: -grid, y: 0 };
       else if (e.key === "ArrowUp" && direction.y === 0) direction = { x: 0, y: -grid };
       else if (e.key === "ArrowRight" && direction.x === 0) direction = { x: grid, y: 0 };
@@ -134,13 +135,13 @@
     });
 
     let touchStartX = 0, touchStartY = 0;
-    canvas.addEventListener("touchstart", (e) => {
+    document.body.addEventListener("touchstart", (e) => {
       const t = e.touches[0];
       touchStartX = t.clientX;
       touchStartY = t.clientY;
     });
 
-    canvas.addEventListener("touchend", (e) => {
+    document.body.addEventListener("touchend", (e) => {
       const t = e.changedTouches[0];
       const dx = t.clientX - touchStartX;
       const dy = t.clientY - touchStartY;
